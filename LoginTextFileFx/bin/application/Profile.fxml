@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="798.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProfileController">
+   <children>
+      <ImageView fitHeight="881.0" fitWidth="937.0" layoutX="-11.0" layoutY="-1.0">
+         <image>
+            <Image url="@../images/Frame%201sfondo2.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="703.0" layoutX="129.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="625.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#4e4f4f00" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Text fill="WHITE" layoutX="186.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Or Edit Your Profile" wrappingWidth="526.1952819824219">
+         <font>
+            <Font name="Arial Bold" size="40.0" />
+         </font>
+      </Text>
+      <Button layoutX="628.0" layoutY="723.0" mnemonicParsing="false" onAction="#saveProfileInformationButton" prefHeight="42.0" prefWidth="109.0" text="Save Profile" />
+      <HBox layoutX="148.0" layoutY="78.0" prefHeight="197.0" prefWidth="591.0" spacing="70.0">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="204.0" prefWidth="318.0" spacing="10.0">
+               <children>
+                  <HBox prefHeight="28.0" prefWidth="318.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="130.0" text="Name:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nameProfileLabel" contentDisplay="CENTER" prefHeight="30.0" prefWidth="190.0">
+                           <font>
+                              <Font name="Arial Bold Italic" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="314.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="130.0" text="Password:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="passwordProfileTextField" prefHeight="30.0" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="18.0" prefWidth="318.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="130.0" text="Birthday:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="birthdayDatePicker" prefHeight="30.0" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="21.0" prefWidth="318.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="130.0" text="Age:">
+                           <font>
+                              <Font name="Arial Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="ageTextField" onMouseClicked="#showAge" prefHeight="30.0" prefWidth="105.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="151.0" prefWidth="179.0" spacing="10.0">
+               <children>
+                  <ImageView fx:id="profilePhoto" fitHeight="140.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="profileImageFileChooser" mnemonicParsing="false" onAction="#singleFileChooser" prefHeight="32.0" prefWidth="133.0" text="Change Picture" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <TableView fx:id="tableView" layoutX="177.0" layoutY="304.0" prefHeight="244.0" prefWidth="534.0" style="-fx-background-color: LIGHTGREY;">
+        <columns>
+          <TableColumn fx:id="songNameColumn" prefWidth="133.0" text="Song Name" />
+          <TableColumn fx:id="songArtistColumn" prefWidth="133.0" text="Artist" />
+            <TableColumn fx:id="songMoodColumn" prefWidth="133.0" text="Mood" />
+            <TableColumn fx:id="songEnergyColumn" prefWidth="133.0" text="Energy" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="276.0" layoutY="686.0" prefHeight="48.0" prefWidth="390.0" spacing="20.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Music Genre: " wrappingWidth="150.6069793701172">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+            <RadioButton fx:id="popRadioButton" mnemonicParsing="false" text="Pop" />
+            <RadioButton fx:id="rapRadioButton" mnemonicParsing="false" text="Rap" />
+            <RadioButton fx:id="rockRadioButton" mnemonicParsing="false" text="Rock" />
+         </children>
+      </HBox>
+      <Label layoutX="202.0" layoutY="701.0" prefHeight="17.0" prefWidth="63.0" text="All Songs" />
+      <RadioButton fx:id="allSongsRadioButton" layoutX="175.0" layoutY="701.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="20.0" />
+      <HBox alignment="CENTER" layoutX="178.0" layoutY="272.0" prefHeight="25.0" prefWidth="226.0" spacing="5.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your Songs:">
+               <font>
+                  <Font name="Arial Bold" size="23.0" />
+               </font>
+            </Text>
+            <Label fx:id="crossingFingersLabel" prefHeight="18.0" prefWidth="136.0">
+               <font>
+                  <Font name="Arial Bold" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="160.0" layoutY="555.0" prefHeight="32.0" prefWidth="580.0" spacing="10.0">
+         <children>
+            <TextField fx:id="songNameTextField" prefHeight="27.0" prefWidth="125.0" promptText="Song Name" />
+            <TextField fx:id="songArtistTextField" prefHeight="27.0" prefWidth="140.0" promptText="Artist Name" />
+            <ComboBox fx:id="moodComboBox" onAction="#moodComboAction" prefHeight="27.0" prefWidth="85.0" promptText="Mood" />
+            <ComboBox fx:id="energyComboBox" onAction="#energyComboAction" prefHeight="27.0" prefWidth="93.0" promptText="Energy" />
+            <ComboBox fx:id="genreComboBox" prefHeight="27.0" prefWidth="88.0" promptText="Genre" />
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="245.0" layoutY="650.0" prefHeight="36.0" prefWidth="408.0" spacing="30.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addNewSongButtonPushed" prefHeight="34.0" prefWidth="156.0" text="Add Song" />
+            <Button mnemonicParsing="false" onAction="#deleteSongsButtonPushed" prefHeight="34.0" prefWidth="156.0" text="Delete Song" />
+         </children>
+      </HBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="20.0" layoutX="448.0" layoutY="600.0" stroke="#727272" strokeType="INSIDE" strokeWidth="0.0" width="85.0">
+         <fill>
+            <LinearGradient endX="1.0" startX="0.3125">
+               <stops>
+                  <Stop color="#c7d7fa" />
+                  <Stop color="#083efc" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="20.0" layoutX="552.0" layoutY="600.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="85.0">
+         <fill>
+            <LinearGradient endX="1.0" startX="0.21153846153846154">
+               <stops>
+                  <Stop color="#c7d7fa" />
+                  <Stop color="#0dfc08" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <HBox layoutX="446.0" layoutY="601.0" prefHeight="17.0" prefWidth="206.0" spacing="20.0">
+         <children>
+            <Slider fx:id="moodLevelSlider" prefHeight="16.0" prefWidth="85.0" />
+            <Slider fx:id="energyLevelSlider" prefWidth="85.0" />
+         </children>
+      </HBox>
+      <Text layoutX="293.0" layoutY="616.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M2m Meter:" wrappingWidth="131.99365234375">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+      </Text>
+      <Circle fill="#1f93ff00" layoutX="411.0" layoutY="599.0" onMouseClicked="#indexExplained" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="407.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" text="?">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Text>
+      <Button layoutX="146.0" layoutY="596.0" mnemonicParsing="false" onAction="#importPlaylistButtonPushed" text="Import Playlist" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="816.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLDocumentController">
+   <children>
+      <ImageView fitHeight="821.0" fitWidth="904.0" layoutX="-3.0" layoutY="-5.0">
+         <image>
+            <Image url="@../images/Frame%201sfondo(1).png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="nameTextField" layoutX="252.0" layoutY="314.0" prefHeight="75.0" prefWidth="400.0" promptText="Username">
+         <font>
+            <Font size="24.0" />
+         </font></TextField>
+      <Button fx:id="signUpButton" layoutX="261.0" layoutY="530.0" mnemonicParsing="false" onAction="#signUpButtonPushed" prefHeight="70.0" prefWidth="170.0" text="Sign Up">
+         <font>
+            <Font size="24.0" />
+         </font></Button>
+      <Button fx:id="loginButton" layoutX="476.0" layoutY="530.0" mnemonicParsing="false" onAction="#loginButtonPushed" prefHeight="70.0" prefWidth="170.0" text="Login">
+         <font>
+            <Font size="24.0" />
+         </font></Button>
+      <TextField fx:id="passwordTextField" layoutX="252.0" layoutY="427.0" prefHeight="75.0" prefWidth="400.0" promptText="Password">
+         <font>
+            <Font size="24.0" />
+         </font></TextField>
+      <Text fill="WHITE" layoutX="262.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login or Sign Up">
+         <font>
+            <Font name="Arial Bold" size="40.0" />
+         </font>
+      </Text>
+      <Label fx:id="signUpStatus" layoutX="258.0" layoutY="268.0" prefHeight="18.0" prefWidth="384.0" textFill="#ff9984">
+         <font>
+            <Font name="Arial Bold Italic" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
